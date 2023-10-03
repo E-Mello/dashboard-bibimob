@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BibiMob Dashboard 🚗💰
 
-## Getting Started
+![GitHub repo size](https://img.shields.io/github/repo-size/E-Mello/dashboard-bibimob)
+![GitHub stars](https://img.shields.io/github/stars/E-Mello/dashboard-bibimob)
+![GitHub forks](https://img.shields.io/github/forks/E-Mello/dashboard-bibimob)
+![GitHub license](https://img.shields.io/github/license/E-Mello/dashboard-bibimob)
 
-First, run the development server:
+BibiMob Dashboard é uma aplicação web desenvolvida com Bun projetada para controlar os pagamentos dos motoristas associados ao serviço de mobilidade urbana BibiMob. Esta plataforma oferece recursos de gerenciamento de cadastros e acompanhamento do faturamento dos motoristas, tornando a gestão da sua frota de motoristas mais eficiente e organizada.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Recursos Principais
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🚗 **Controle de Motoristas**: Registre e gerencie facilmente os dados dos motoristas, incluindo informações pessoais e documentação necessária.
+- 💰 **Acompanhamento de Faturamento**: Acompanhe o faturamento de cada motorista, incluindo ganhos e despesas.
+- 📝 **Histórico de Transações**: Mantenha um registro completo das transações financeiras entre a BibiMob e os motoristas.
+- 📊 **Relatórios e Estatísticas**: Gere relatórios detalhados e estatísticas para análise financeira e tomada de decisões.
+- 🔒 **Segurança de Dados**: Utilize recursos avançados de segurança para proteger as informações sensíveis dos motoristas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pré-requisitos
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Antes de começar, verifique se você atende aos seguintes pré-requisitos:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Bun: Certifique-se de que o Bun está instalado na sua máquina.
