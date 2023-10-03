@@ -1,0 +1,24 @@
+/* Classe para animação de fade */
+.animate-fade {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* Classe para ocultar o elemento com fade */
+.animate-fadeout {
+  opacity: 0;
+}
+
+/* Animação de fadeout */
+.animate-fadeout {
+  animation: fadeout 0.3s ease-in-out;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
