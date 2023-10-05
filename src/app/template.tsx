@@ -42,12 +42,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <div>
-        <IconButton className={classes.themeModeButton} onClick={toggleDarkMode}>
-          {isDarkMode ? <Brightness4Icon /> : <Brightness7Icon />}
-        </IconButton>
-        {children}
-      </div>
+      <IconButton className={classes.themeModeButton} onClick={toggleDarkMode}>
+        {isDarkMode ? <Brightness4Icon /> : <Brightness7Icon />}
+      </IconButton>
+      {children}
     </ThemeProvider>
   );
 }

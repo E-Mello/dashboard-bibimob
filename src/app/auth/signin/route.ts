@@ -2,18 +2,29 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 
-export async function POST(req: { formData: () => any; url: string | URL | undefined; }) {
-  const formData = await req.formData();
-  const email = formData.get("email");
-  const password = formData.get("password");
+export async function POST(request: Request) {
+  const requestUrl = new URL(request.url)
+  const formData = await request.formData();
+  const email = String(formData.get('email'))
+  const password = String(formData.get('password'))
   const supabase = createRouteHandlerClient({ cookies });
 
-  await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
-  });
+  })
 
-  return NextResponse.redirect(new URL("/home", req.url), {
+  if (error) {
+    return NextResponse.redirect(
+      `${requestUrl.origin}/login?error=Could not authenticate user`,
+      {
+        // a 301 status is required to redirect from a POST to a GET route
+        status: 301,
+      }
+    )
+  }
+
+  return NextResponse.redirect(new URL("/home", request.url), {
     status: 302,
   });
 }
