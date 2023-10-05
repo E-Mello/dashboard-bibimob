@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ThemeProvider, createTheme, makeStyles } from "@material-ui/core/styles";
 
+import Brightness2Icon from "@material-ui/icons/Brightness2";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import Brightness7Icon from "@material-ui/icons/Brightness7";
 import { Container } from "@mui/material";
@@ -19,6 +20,12 @@ export const rootStyles = makeStyles((theme) => ({
     position: "absolute",
     top: 10,
     right: 10,
+  },
+  sunIcon: {
+    color: 'yellow',
+  },
+  moonIcon: {
+    color: 'blue',
   },
 
 }));
@@ -43,7 +50,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
       <IconButton className={classes.themeModeButton} onClick={toggleDarkMode}>
-        {isDarkMode ? <Brightness4Icon /> : <Brightness7Icon />}
+        {isDarkMode ? <Brightness7Icon className={classes.sunIcon} /> : <Brightness2Icon className={classes.moonIcon} />}
       </IconButton>
       {children}
     </ThemeProvider>
