@@ -2,7 +2,8 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
-import Copyright from "~/components/Copyright";
+import Copyright from "@/components/Copyright";
+import LoadingSkeleton from "@/components/ui/LoadingSkeleton";
 import { NextPage } from "next";
 import { useRouter } from "next/navigation";
 
@@ -50,7 +51,7 @@ const ContactPage: NextPage = () => {
   };
 
   return (
-    <div className="flex flex-col  justify-end items-center self-end object-end h-full pt-20">
+    <div className="flex w-[80vw] flex-col  justify-end items-center self-end object-end h-full pt-20">
       <div className="w-full h-[80vh] flex flex-col items-center justify-center">
         <div className="w-1/2 p-6 bg-[#89608f] rounded-lg ">
           <h1 className="text-2xl font-bold mb-6">Contact Us</h1>

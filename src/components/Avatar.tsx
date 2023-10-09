@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
+import type { StaticImageData } from 'next/image';
 
 interface AvatarProps {
-    src: string;
+    src: StaticImageData;
     alt: string;
     width: number;
     height: number;
