@@ -10,7 +10,7 @@ const TabsContent: React.FC<TabsContentProps> = ({ activeTab, children }) => {
     <div>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { activeTab });
+          return React.cloneElement(child, { activeTab } as { activeTab: string });
         }
         return null;
       })}

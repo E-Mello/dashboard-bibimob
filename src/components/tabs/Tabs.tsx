@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import TabsContent from "~/components/tabs/TabsContent";
-import TabsList from "~/components/tabs/TabsList";
+import TabsContent from "@/components/tabs/TabsContent";
+import TabsList from "@/components/tabs/TabsList";
 
 interface TabsProps {
   defaultValue: string;
@@ -20,9 +20,9 @@ const Tabs: React.FC<TabsProps> = ({ defaultValue, className, children }) => {
     return React.Children.map(children, (child) => {
       if (React.isValidElement(child)) {
         if (child.type === TabsList) {
-          return React.cloneElement(child, { activeTab, handleTabClick });
+          return React.cloneElement(child, { activeTab, handleTabClick } as React.HTMLAttributes<HTMLElement>);
         } else if (child.type === TabsContent) {
-          return React.cloneElement(child, { activeTab });
+          return React.cloneElement(child, { activeTab } as React.HTMLAttributes<HTMLElement>);
         }
       }
       return null;

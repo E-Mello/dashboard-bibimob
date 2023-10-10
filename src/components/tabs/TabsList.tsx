@@ -17,7 +17,7 @@ const TabsList: React.FC<TabsListProps> = ({
     <div className={className}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { activeTab, handleTabClick });
+          return React.cloneElement(child, { activeTab, handleTabClick } as React.HTMLAttributes<HTMLElement>);
         }
         return null;
       })}
