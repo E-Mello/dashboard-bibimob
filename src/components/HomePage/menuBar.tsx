@@ -16,7 +16,7 @@ const MenuBar = () => {
     const [isDarkMode] = useAtom(isDarkModeAtom);
     const [isOpenNavBar, setIsOpenNavBar] = useAtom(isOpenNavBarAtom); // estado para controlar se a barra lateral está aberta ou não
     return (
-        <nav className={`h-16 flex items-center content-center justify-between flex-wrap transition-all duration-300 ${isOpenNavBar ? 'w-[87vw] ml-60' : 'w-[96vw] ml-[4vw]'}  bg-gray-800 p-6 ${isDarkMode ? 'bg-gray-300' : ''}`}>
+        <nav className={`h-16 flex items-center content-center z-50 justify-between flex-wrap transition-all duration-300 ${isOpenNavBar ? 'w-[87vw] ml-60' : 'w-[96vw] ml-[4.43vw]'}  bg-gray-800 p-6 ${isDarkMode ? 'bg-gray-300' : ''}`}>
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <div className="h-8 w-8 mr-2">
                     <Avatar src={avatarUrl} alt="Avatar" width={32} height={32} />

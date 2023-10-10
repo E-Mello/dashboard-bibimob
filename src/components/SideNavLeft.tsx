@@ -61,15 +61,15 @@ const SideNavLeft: React.FC = () => {
     ]
 
     return (
-        <nav className={`${isOpenNavBar ? 'w-64' : 'w-20'} transition-all duration-300 bg-sidebar-background h-screen fixed top-0 left-0 border-r border-r-foreground bg-green-500`}>
+        <nav className={`${isOpenNavBar ? 'w-64' : 'w-20'} transition-all z-50 duration-300 bg-sidebar-background h-screen fixed top-0 left-0 border-r border-r-foreground bg-green-500`}>
             <div className={`p-4 flex flex-col gap-6 transition-all duration-300 ${isOpenNavBar ? '' : ''}`}>
                 <div className={`flex flex-row justify-between transition-all duration-300 ${isOpenNavBar ? '' : 'self-center'}`}>
                     <h2 className={`text-2xl font-semibold transition-all duration-300 ${isOpenNavBar ? '' : 'hidden'}`}>Menu</h2>
                     {
                         isOpenNavBar ? (
-                            <CloseIcon className="flex top-4 right-4 text-white cursor-pointer" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <CloseIcon className="flex top-4 right-4 text-white cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         ) : (
-                            <MenuIcon className="flex top-4 right-4 text-white cursor-pointer" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <MenuIcon className="flex top-4 right-4 text-white cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         )
                     }
                 </div>

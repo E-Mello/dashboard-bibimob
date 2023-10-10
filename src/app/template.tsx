@@ -20,6 +20,7 @@ export const rootStyles = makeStyles((theme) => ({
     position: "absolute",
     top: 10,
     right: 10,
+    zIndex: 50,
   },
   sunIcon: {
     color: 'yellow',
