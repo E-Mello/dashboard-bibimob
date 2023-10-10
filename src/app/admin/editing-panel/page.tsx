@@ -1,6 +1,6 @@
 "use client";
 
-import DevelopmentNotice from "~/components/DevelopmentNotice";
+import DevelopmentNotice from "@/components/DevelopmentNotice";
 import React from "react";
 
 const AdminEditingPage = () => {

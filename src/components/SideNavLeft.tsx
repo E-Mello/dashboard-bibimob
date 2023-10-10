@@ -67,9 +67,9 @@ const SideNavLeft: React.FC = () => {
                     <h2 className={`text-2xl font-semibold transition-all duration-300 ${isOpenNavBar ? '' : 'hidden'}`}>Menu</h2>
                     {
                         isOpenNavBar ? (
-                            <CloseIcon className="flex top-4 right-4 text-white cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <CloseIcon className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         ) : (
-                            <MenuIcon className="flex top-4 right-4 text-white cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <MenuIcon className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         )
                     }
                 </div>
@@ -77,7 +77,7 @@ const SideNavLeft: React.FC = () => {
                 <ul className={`space-y-4 transition-all duration-300 ${isOpenNavBar ? '' : 'flex flex-col self-center gap-3'}`}>
                     {
                         menu.map((item, index) => (
-                            <Link href={item.Link} key={index} className="text-white flex items-center space-x-2 cursor-pointer">
+                            <Link href={item.Link} key={index} className=" flex items-center space-x-2 cursor-pointer">
                                 <item.icon />
                                 <span className={`transition-all duration-300 ${isOpenNavBar ? '' : 'hidden'}`}>{item.name}</span>
                             </Link>
