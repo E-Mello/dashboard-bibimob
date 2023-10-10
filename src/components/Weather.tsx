@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 interface WeatherData {
@@ -18,7 +19,7 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-3xl font-semibold">{data.location}</h2>
         <div className="flex items-center">
-          <img
+          <Image
             src={`/weather-icons/${data.weatherCondition}.svg`}
             alt={data.weatherCondition}
             className="w-12 h-12 mr-2"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Suspense } from "react";
 import { useRouter } from "next/navigation";
 
@@ -13,7 +14,7 @@ interface SkillCardProps {
 
 const SkillCard = ({ title, description, image }: SkillCardProps) => (
   <div className="bg-white p-4 rounded-lg shadow">
-    <img
+    <Image
       src={image}
       alt={title}
       className="w-20 h-20 mx-auto mb-4 rounded-full"

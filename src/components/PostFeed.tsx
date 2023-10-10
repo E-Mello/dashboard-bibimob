@@ -1,5 +1,6 @@
 "user client";
 
+import Image from "next/image";
 import React from "react";
 
 interface Post {
@@ -22,14 +23,14 @@ const PostFeed: React.FC<PostFeedProps> = ({ posts }) => {
           key={post.id}
           className="bg-white rounded-lg shadow-lg overflow-hidden"
         >
-          <img
+          <Image
             src={post.image}
             alt={post.caption}
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
             <div className="flex items-center mb-4">
-              <img
+              <Image
                 src={post.avatar}
                 alt={post.username}
                 className="w-10 h-10 rounded-full object-cover mr-2"
