@@ -1,7 +1,7 @@
 "use client"
 
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import React, { useState } from 'react';
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
@@ -89,7 +89,7 @@ export default function AuthForm() {
                             placeholder="Senha"
                             className="p-[0.85rem] border-2 border-gray-300 rounded-md w-full"
                         />
-                        <a className={`fixed self-center pr-2 opacity-50 cursor-pointer ${isDarkMode ? 'text-black' : ''}`} onClick={handleShowPassword}>{showPassword ? <VisibilityOff /> : <Visibility />}</a>
+                        <a className={`fixed self-center pr-2 opacity-50 cursor-pointer ${isDarkMode ? 'text-black' : ''}`} onClick={handleShowPassword}>{showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}</a>
                     </div>
                     <button
                         type="submit"

@@ -19,6 +19,8 @@ const SkillCard = ({ title, description, image }: SkillCardProps) => (
       src={image}
       alt={title}
       className="w-20 h-20 mx-auto mb-4 rounded-full"
+      width={500}
+      height={500}
     />
     <h3 className="text-xl font-bold mb-2">{title}</h3>
     <p className="text-gray-800">{description}</p>

@@ -1,13 +1,11 @@
 "use client"
 
-import { Call, Description, Home, PermContactCalendar, PriceChange } from '@mui/icons-material';
+import { MdCall, MdClose, MdContactPage, MdDescription, MdMenu, MdPriceChange } from "react-icons/md";
 import React, { useState } from 'react';
 
-import CloseIcon from '@material-ui/icons/Close';
-import { Divider } from '@mui/material';
+import { FaHome } from "react-icons/fa";
 import { IconType } from 'react-icons';
 import Link from 'next/link';
-import MenuIcon from '@material-ui/icons/Menu';
 import { isOpenNavBarAtom } from '@/atoms/openNavBarAtom';
 import { useAtom } from 'jotai';
 
@@ -26,35 +24,35 @@ const SideNavLeft: React.FC = () => {
         {
             name: 'Home',
             Link: '/home',
-            icon: () => <Home />,
+            icon: () => <FaHome />,
             haveOptions: false,
             auth: false,
         },
         {
             name: 'Faturamento',
             Link: '/home/billing',
-            icon: () => <PriceChange />,
+            icon: () => <MdPriceChange />,
             haveOptions: false,
             auth: false,
         },
         {
             name: 'Meus Dados',
             Link: '/home/my-data',
-            icon: () => <PermContactCalendar />,
+            icon: () => <MdContactPage />,
             haveOptions: false,
             auth: false,
         },
         {
             name: 'Relatorios',
             Link: '/home/reports',
-            icon: () => <Description />,
+            icon: () => <MdDescription />,
             haveOptions: false,
             auth: false,
         },
         {
             name: 'Contato',
             Link: '/home/contact',
-            icon: () => <Call />,
+            icon: () => <MdCall />,
             haveOptions: false,
             auth: false,
         },
@@ -67,13 +65,13 @@ const SideNavLeft: React.FC = () => {
                     <h2 className={`text-2xl font-semibold transition-all duration-300 ${isOpenNavBar ? '' : 'hidden'}`}>Menu</h2>
                     {
                         isOpenNavBar ? (
-                            <CloseIcon className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <MdClose className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         ) : (
-                            <MenuIcon className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
+                            <MdMenu className="flex top-4 right-4  cursor-pointer z-50" onClick={() => setIsOpenNavBar(!isOpenNavBar)} />
                         )
                     }
                 </div>
-                <Divider />
+
                 <ul className={`space-y-4 transition-all duration-300 ${isOpenNavBar ? '' : 'flex flex-col self-center gap-3'}`}>
                     {
                         menu.map((item, index) => (
