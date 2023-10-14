@@ -11,6 +11,7 @@ import carro_mapa from '../../../public/otherspic/carro_mapa.jpg';
 import celular_maps from '../../../public/otherspic/celular_maps.jpg';
 import freedom from '../../../public/freedom.jpg';
 import homem_familia from '../../../public/otherspic/homem_familia.jpg';
+import { isDarkModeAtom } from '@/atoms/themeModeAtom';
 import melhores_ganhos from '../../../public/bibimob/melhores_ganhos.png'
 import motorista from '../../../public/otherspic/motorista.jpg';
 import motorista_valorizado from '../../../public/bibimob/motorista_valorizado.png'
@@ -23,10 +24,12 @@ import preco_bom from '../../../public/bibimob/preco_bom.png'
 import preco_justo from '../../../public/bibimob/preco_justo.png'
 import segurando_mapa from '../../../public/otherspic/segurando_mapa.jpg';
 import trust from '../../../public/trust.jpg'
+import { useAtom } from 'jotai';
 
 export default function Index() {
   const parallax = useRef<IParallax>(null!)
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [darkMode] = useAtom(isDarkModeAtom);
 
   const handleSlideChange = (index: number) => {
     setCurrentIndex(index);
@@ -43,8 +46,8 @@ export default function Index() {
   }));
 
   return (
-    <section className="overflow-hidden z-0 flex-col w-full">
-      <Parallax ref={parallax} pages={3} style={{ display: 'flex', height: '93.5%' }}>
+    <section className={`overflow-hidden z-0 flex-col w-full flex `}>
+      <Parallax ref={parallax} pages={3} style={{ display: 'flex', height: '100%' }} className={`${darkMode ? 'bg-gray-700' : 'bg-slate-300'}`}>
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
         <ParallaxLayer

@@ -1,19 +1,10 @@
-"use client"
+'use client'
 
-import MercadoPago, { Payment } from 'mercadopago';
-import React, { useEffect, useState } from 'react';
-import { getPaymentMethods, initMercadoPago } from '@mercadopago/sdk-react';
-const client = new MercadoPago({ accessToken: 'TEST-5149555026273123-101407-b3ba1be6a61a6580a9581ef44ac35417-425908276', options: { timeout: 5000, idempotencyKey: 'abc' } });
-const payment = new Payment(client);
+import { IAdditionalCardFormData, IPaymentFormData } from '@mercadopago/sdk-react/bricks/payment/type';
+import { Payment, initMercadoPago } from '@mercadopago/sdk-react';
+import React, { useState } from 'react';
 
-const body = {
-  transaction_amount: 12.34,
-  description: '<DESCRIPTION>',
-  payment_method_id: '<PAYMENT_METHOD_ID>',
-  payer: {
-    email: '<EMAIL>'
-  },
-};
+initMercadoPago('TEST-69ef9280-c51f-40af-9163-4568e20f26da');
 
 const Faturamento: React.FC = () => {
   const [valor, setValor] = useState(0);
@@ -27,25 +18,16 @@ const Faturamento: React.FC = () => {
     setShowFatura(true);
   };
 
-
-  const client = initMercadoPago('TEST-6a3b0b9e-1b1e-4b0e-8b0a-1b0b0b0b0b0b')
-
-
-  const initialization = {
-    amount: 100,
-    preferenceId: "<PREFERENCE_ID>",
-  };
   const customization = {
     paymentMethods: {
-      ticket: "all",
-      bankTransfer: "all",
       creditCard: "all",
-      debitCard: "all",
-      mercadoPago: "all",
+      ticket: ["bolbradesco"],
     },
   };
+
   const onSubmit = async (
-    { selectedPaymentMethod, formData }: { selectedPaymentMethod: string, formData: { [key: string]: string } }
+    param: IPaymentFormData,
+    param2?: IAdditionalCardFormData | null
   ) => {
     // callback chamado ao clicar no botão de submissão dos dados
     return new Promise<void>((resolve, reject) => {
@@ -54,7 +36,7 @@ const Faturamento: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(param.formData),
       })
         .then((response) => response.json())
         .then((response) => {
@@ -67,23 +49,19 @@ const Faturamento: React.FC = () => {
         });
     });
   };
-  const onError = async (error: any) => {
-    // callback chamado para todos os casos de erro do Brick
-    console.log(error);
-  };
-
-  const [paymentResult, setPaymentResult] = useState<any>(null);
-
-  useEffect(() => {
-    payment.create({ body })
-      .then((result) => setPaymentResult(result))
-      .catch(onError);
-  }, []);
 
   return (
-    <div>
+    <div className='w-full '>
       <h1>Faturamento</h1>
-      {paymentResult && <p>{JSON.stringify(paymentResult)}</p>}
+      <button onClick={handleGerarFatura}>Gerar Fatura</button>
+      {showFatura && (
+        <Payment
+          initialization={{ amount: 100 }}
+          onSubmit={onSubmit}
+          onError={(error) => console.log(error)}
+          customization={customization}
+        />
+      )}
     </div>
   );
 };
