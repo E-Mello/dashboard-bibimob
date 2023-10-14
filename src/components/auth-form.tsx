@@ -3,9 +3,6 @@
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import React, { useState } from 'react';
 
-import { NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { isDarkModeAtom } from "@/atoms/themeModeAtom";
 import { supabase } from "@/lib/supabase";
 import { useAtom } from "jotai";
