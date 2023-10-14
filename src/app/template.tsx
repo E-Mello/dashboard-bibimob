@@ -1,6 +1,6 @@
 "use client"
 
-import { BsMoonStarsFill, BsSun } from "react-icons/bs";
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import React, { useState } from "react";
 
 import { isDarkModeAtom } from "@/atoms/themeModeAtom";
@@ -14,12 +14,12 @@ export default function Template({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div>
-      <span onClick={toggleDarkMode} className="transition-all duration-300">
+    <div className={`${isDarkMode ? 'bg-white' : 'bg-black'}`}>
+      <span onClick={toggleDarkMode} className="transition-all duration-300 absolute right-0 pr-10 pt-7 text-3xl cursor-pointer z-50">
         {isDarkMode ? (
-          <BsSun className={"absolute text-3xl cursor-pointer right-0 mr-3 mt-3"} style={{ color: "#a14e17" }} />
+          <BsSunFill style={{ color: "#d1b722" }} />
         ) : (
-          <BsMoonStarsFill className={"absolute text-3xl cursor-pointer right-0 mr-3 mt-3"} style={{ color: "#1e177c", transform: "scaleX(-1)" }} />
+          <BsMoonStarsFill style={{ color: "#1e177c", transform: "scaleX(-1)" }} />
         )}
       </span>
       {children}
