@@ -11,7 +11,7 @@ export default function ContactLayout({
       <header className="items-center overflow-hidden ">
         <MenuBar />
       </header>
-      <nav className=" items-center z-40">
+      <nav className=" items-center">
         <SideNavLeftComponent />
       </nav>
       <main className="flex justify-center z-0">

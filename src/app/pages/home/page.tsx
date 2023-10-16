@@ -4,29 +4,29 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 import React, { useRef, useState } from 'react';
-import { othersPic, othersPic2 } from '../../../public/otherspic';
+import { othersPic, othersPic2 } from '../../../../public/otherspic';
 
 import Image from 'next/image';
-import carro_mapa from '../../../public/otherspic/carro_mapa.jpg';
-import celular_maps from '../../../public/otherspic/celular_maps.jpg';
-import freedom from '../../../public/freedom.jpg';
-import homem_familia from '../../../public/otherspic/homem_familia.jpg';
+import carro_mapa from '../../../../public/otherspic/carro_mapa.jpg';
+import celular_maps from '../../../../public/otherspic/celular_maps.jpg';
+import freedom from '../../../../public/freedom.jpg';
+import homem_familia from '../../../../public/otherspic/homem_familia.jpg';
 import { isDarkModeAtom } from '@/atoms/themeModeAtom';
-import melhores_ganhos from '../../../public/bibimob/melhores_ganhos.png'
-import motorista from '../../../public/otherspic/motorista.jpg';
-import motorista_valorizado from '../../../public/bibimob/motorista_valorizado.png'
-import mulher_chave from '../../../public/otherspic/mulher_chave.jpg';
-import mulher_cinto from '../../../public/otherspic/mulher_cinto.jpg';
-import mulher_sorrindo from '../../../public/otherspic/mulher_sorrindo.jpg';
-import mulheres_sorrindo from '../../../public/otherspic/mulheres_sorrindo.jpg';
-import partnership from '../../../public/partnership.jpg';
-import preco_bom from '../../../public/bibimob/preco_bom.png'
-import preco_justo from '../../../public/bibimob/preco_justo.png'
-import segurando_mapa from '../../../public/otherspic/segurando_mapa.jpg';
-import trust from '../../../public/trust.jpg'
+import melhores_ganhos from '../../../../public/bibimob/melhores_ganhos.png'
+import motorista from '../../../../public/otherspic/motorista.jpg';
+import motorista_valorizado from '../../../../public/bibimob/motorista_valorizado.png'
+import mulher_chave from '../../../../public/otherspic/mulher_chave.jpg';
+import mulher_cinto from '../../../../public/otherspic/mulher_cinto.jpg';
+import mulher_sorrindo from '../../../../public/otherspic/mulher_sorrindo.jpg';
+import mulheres_sorrindo from '../../../../public/otherspic/mulheres_sorrindo.jpg';
+import partnership from '../../../../public/partnership.jpg';
+import preco_bom from '../../../../public/bibimob/preco_bom.png'
+import preco_justo from '../../../../public/bibimob/preco_justo.png'
+import segurando_mapa from '../../../../public/otherspic/segurando_mapa.jpg';
+import trust from '../../../../public/trust.jpg'
 import { useAtom } from 'jotai';
 
-export default function Index() {
+export default function Home() {
   const parallax = useRef<IParallax>(null!)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [darkMode] = useAtom(isDarkModeAtom);
@@ -46,7 +46,7 @@ export default function Index() {
   }));
 
   return (
-    <section className={`overflow-hidden z-0 flex-col w-full flex `}>
+    <section className={`overflow-hidden z-0 w-screen h-full`}>
       <Parallax ref={parallax} pages={3} style={{ display: 'flex', height: '100%' }} className={`${darkMode ? 'bg-gray-700' : 'bg-slate-300'}`}>
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />

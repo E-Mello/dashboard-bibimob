@@ -25,7 +25,7 @@ export default function Login() {
   }
 
   return (
-    <div className="flex items-center justify-center h-[100vh] bg-gradient-to-b from-yellow-400 to-black">
+    <div className="flex items-center w-screen justify-center h-[100vh] bg-gradient-to-b from-yellow-400 to-black z-[100]">
       <div className="bg-white  transition-shadow p-8 w-[30rem]  rounded-lg justify-center flex flex-col text-center">
         <h1 className={`text-5xl font-bold mb-8 ${isDarkMode ? 'text-black' : ''}`}>
           {isSignIn ? "Login" : "Cadastro"}
