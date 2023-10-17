@@ -13,9 +13,9 @@ import { useAtom } from 'jotai';
 
 const MenuBar = () => {
     const avatarUrl: StaticImageData = avatarImage;
-
     const [isDarkMode] = useAtom(isDarkModeAtom);
     const [isOpenNavBar, setIsOpenNavBar] = useAtom(isOpenNavBarAtom); // estado para controlar se a barra lateral está aberta ou não
+
     return (
         <section className={`top-0 fixed z-40 justify-between flex-wrap transition-all w-full  duration-300 p-6 ${isDarkMode ? 'text-white' : 'text-black'}`}>
             <div className='flex justify-between w-[100vw] pr-32 items-center content-center h-10'>
@@ -29,10 +29,11 @@ const MenuBar = () => {
                     <div className="h-8 w-8 rounded-full ">
                         <Image src={avatarUrl} alt="Avatar" width={32} height={32} className='' />
                     </div>
-                    <form action="./auth/signin" method='post'>
+                    <form action="./auth/signout" method='post'>
                         <button
                             className="bg-gray-700 hover:bg-gray-600  font-bold py-2 px-4 rounded"
                             formAction='./auth/signout'
+                            type='submit'
                         >
                             Logout
                         </button>
