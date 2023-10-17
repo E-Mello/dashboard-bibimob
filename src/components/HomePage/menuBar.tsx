@@ -29,11 +29,14 @@ const MenuBar = () => {
                     <div className="h-8 w-8 rounded-full ">
                         <Image src={avatarUrl} alt="Avatar" width={32} height={32} className='' />
                     </div>
-                    <form action="./auth/signout" method='post'>
+                    {/* Aqui deve deixar nesse caminho, o menubar fica em /pages/home */}
+                    <form action={'../auth/signout'} method='POST'>
                         <button
                             className="bg-gray-700 hover:bg-gray-600  font-bold py-2 px-4 rounded"
-                            formAction='./auth/signout'
                             type='submit'
+                            onClick={() => {
+                                console.log('logout')
+                            }}
                         >
                             Logout
                         </button>
