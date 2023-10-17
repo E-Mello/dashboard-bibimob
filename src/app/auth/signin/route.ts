@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     )
   }
 
-  return NextResponse.redirect(new URL("/home", request.url), {
+  return NextResponse.redirect(new URL("/pages/home", request.url), {
     status: 302,
   });
 }
