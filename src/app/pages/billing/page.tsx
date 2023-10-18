@@ -53,6 +53,10 @@ const Faturamento: React.FC = () => {
     },
   };
 
+  //Images for this page
+  const business = 'https://jquckswgdshzommpnhpb.supabase.co/storage/v1/object/public/BackgroundsPages/business02.jpg'
+  const money = 'https://jquckswgdshzommpnhpb.supabase.co/storage/v1/object/public/BackgroundsPages/money02.jpg'
+
   const onSubmit = async (
     param: IPaymentFormData,
     param2?: IAdditionalCardFormData | null
@@ -62,7 +66,7 @@ const Faturamento: React.FC = () => {
 
   return (
     <section className={`w-screen h-screen flex bg-${isDarkMode ? 'black' : 'white'} text-${isDarkMode ? 'white' : 'black'} font-sans`}>
-      <Image src={isDarkMode ? '/business.jpg' : '/money.jpg'} alt="Bibi Mob Brasil" width={1980} height={200} className="fixed overflow-hidden z-0" />
+      <Image src={isDarkMode ? business : money} alt="Bibi Mob Brasil" width={1980} height={200} className="fixed overflow-hidden z-0" />
       <div className="self-center flex flex-col w-screen justify-center items-center text-center content-center z-10">
         <h1 className="text-3xl font-semibold mb-6">Faturamento</h1>
         <button onClick={handleGerarFatura} className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">

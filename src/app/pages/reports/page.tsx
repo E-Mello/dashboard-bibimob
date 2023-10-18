@@ -166,9 +166,12 @@ export default function ReportsPage() {
     };
   }, [gastos, gastosAno]);
 
+  //Images for this page
+  const reports = 'https://jquckswgdshzommpnhpb.supabase.co/storage/v1/object/public/BackgroundsPages/reports02.jpg'
+
   return (
     <section className="flex flex-col">
-      <Image src="/reports.jpg" alt="Relatórios" width={1980} height={200} className="fixed overflow-hidden z-0" />
+      <Image src={reports} alt="Relatórios" width={1980} height={200} className="fixed overflow-hidden z-0" />
       <div className="fixed w-screen items-center h-screen " style={{ display: "flex", justifyContent: "space-around" }}>
         <div className="flex flex-col gap-5">
           <div className="bg-slate-100 w-[40vw]" style={{ flex: 1, padding: "20px" }}>

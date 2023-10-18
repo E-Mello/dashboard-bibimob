@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 import LoadingSkeleton from "@/components/ui/LoadingSkeleton";
 import { isDarkModeAtom } from "@/atoms/themeModeAtom";
-import { middleware } from '../../middleware';
+import { middleware } from '../middleware';
 import { useAtom } from "jotai";
 
 export default function Login() {

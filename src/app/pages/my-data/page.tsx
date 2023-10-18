@@ -35,9 +35,12 @@ const EditProfilePage: NextPage = () => {
     // router.push('/perfil');
   };
 
+  //Images for this page
+  const escrivania = 'https://jquckswgdshzommpnhpb.supabase.co/storage/v1/object/public/BackgroundsPages/escrivania02.jpg'
+
   return (
     <section className="flex flex-col">
-      <Image src="/escrivania.jpg" alt="Escrivania" width={1980} height={200} className="fixed overflow-hidden z-0" />
+      <Image src={escrivania} alt="Escrivania" width={1980} height={200} className="fixed overflow-hidden z-0" />
       <div className="w-screen h-screen fixed">
         <div className=" min-h-screen flex items-center justify-center">
           <div className={`w-full max-w-md p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-slate-100' : 'bg-gray-800 '}`}>

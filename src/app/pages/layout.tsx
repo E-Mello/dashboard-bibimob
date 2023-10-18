@@ -1,4 +1,4 @@
-import MenuBar from "@/components/HomePage/menuBar";
+import MenuBar from "@/components/menuBar";
 import SideNavLeftComponent from "@/components/SideNavLeft";
 
 export default function ContactLayout({
